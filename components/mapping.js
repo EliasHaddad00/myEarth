@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Alert} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as firebase from 'firebase';
 import {loggingOut} from '../API/firebaseMethods';
-import getActivities from '../components/activities';
-import getMap from '../components/mapping'
 
-export default function Dashboard({ navigation }) {
+export default function getMap() {
   let currentUserUID = firebase.auth().currentUser.uid;
   const [firstName, setFirstName] = useState('');
 
@@ -34,33 +30,13 @@ export default function Dashboard({ navigation }) {
     getUserInfo();
   })
 
-  const handlePress = () => {
-    loggingOut();
-    navigation.replace('Home');
-  };
-
-
-
-  function leaderBoards() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>this is where the leaderboards will be!</Text>
-        <TouchableOpacity style={styles.button} onPress={handlePress}>
-          <Text style={styles.buttonText}>Log Out</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
-  const Tab = createBottomTabNavigator();
+  
 
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={getMap} />
-      <Tab.Screen name="Activities" component={getActivities} />
-      <Tab.Screen name="Other" component={leaderBoards} />
-    </Tab.Navigator>
-  )
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>this is where the Map will be!</Text>
+      </View>
+  );
 }
 
 const styles = StyleSheet.create({
