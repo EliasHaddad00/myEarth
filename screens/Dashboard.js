@@ -3,10 +3,12 @@ import { View, Text, StyleSheet, Alert} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 import * as firebase from 'firebase';
 import {loggingOut} from '../API/firebaseMethods';
 import getActivities from '../components/activities';
 import getMap from '../components/mapping'
+import BaseActivities from '../components/BaseActivities';
 
 export default function Dashboard({ navigation }) {
   let currentUserUID = firebase.auth().currentUser.uid;
@@ -57,7 +59,7 @@ export default function Dashboard({ navigation }) {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={getMap} />
-      <Tab.Screen name="Activities" component={getActivities} />
+      <Tab.Screen name="Activities" component={BaseActivities} />
       <Tab.Screen name="Other" component={leaderBoards} />
     </Tab.Navigator>
   )

@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     fontSize: 35,
     fontWeight: 'bold',
-    fontFamily: "PT Sans Caption",
     color: '#DCE21D',
     textAlign: 'center',
     marginTop:'10%'
@@ -93,7 +92,6 @@ const styles = StyleSheet.create({
     fontSize:20,
     color: 'white',
     fontWeight: 'bold',
-    fontFamily: "AppleGothic",
     textAlign: 'center',
   },
   container: {
@@ -109,7 +107,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     borderColor:'white',
-    fontFamily: "AppleGothic",
     padding: 10,
     margin: 5,
   },
@@ -118,7 +115,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     margin: 10,
     fontWeight: 'bold',
-    fontFamily: "AppleGothic",
     color: '#DCE21D',
   }
 });

@@ -1,10 +1,13 @@
-import React, { useEffect, useState,  } from 'react';
+import React, { Component, useEffect, useState,  } from 'react';
 import { View, Text, StyleSheet, Alert, ScrollView} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as firebase from 'firebase';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import {loggingOut} from '../API/firebaseMethods';
 
-export default function getActivities() {
+export default function getActivities(props){
+  const { navigation } = props
   let currentUserUID = firebase.auth().currentUser.uid;
   const [firstName, setFirstName] = useState('');
 
@@ -29,66 +32,116 @@ export default function getActivities() {
     }
     getUserInfo();
   })
-
   
 
   return (
+    
     <View style={styles.container}>
       <ScrollView style={{ flex: 1, width:'100%' }}>
-        <Text style={{ fontSize: 32, paddingLeft:10, fontFamily: 'HelveticaNeue-Medium' }}>myEarth Activities</Text>
-        <Text style={{ fontSize: 25, paddingLeft:10, fontFamily: 'HelveticaNeue-LightItalic' }}>Level 1</Text>
-        <View style={styles.itemContainer}>
-          <Text>Activity 1</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 2</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 3</Text>
-        </View> 
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Questionare</Text>
+        </TouchableOpacity>
+        
+        <Text style={{ fontSize: 25, paddingLeft:10, fontFamily: 'HelveticaNeue-LightItalic' }}>Bronze Badge</Text>
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 1</Text>
+        </TouchableOpacity>
 
-        <Text style={{ fontSize: 25, paddingLeft:10, fontFamily: 'HelveticaNeue-LightItalic' }}>Level 2</Text>
-        <View style={styles.itemContainer}>
-          <Text>Activity 4</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 5</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 6</Text>
-        </View> 
-        <Text style={{ fontSize: 25, paddingLeft:10,fontFamily: 'HelveticaNeue-LightItalic'  }}>Level 3</Text>
-        <View style={styles.itemContainer}>
-          <Text>Activity 7</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 8</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 9</Text>
-        </View> 
-        <Text style={{ fontSize: 25, paddingLeft:10, fontFamily: 'HelveticaNeue-LightItalic' }}>Level 4</Text>
-        <View style={styles.itemContainer}>
-          <Text>Activity 10</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 11</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 12</Text>
-        </View> 
-        <Text style={{ fontSize: 25, paddingLeft:10, fontFamily: 'HelveticaNeue-LightItalic' }}>Level 5</Text>
-        <View style={styles.itemContainer}>
-          <Text>Activity 12</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 14</Text>
-        </View> 
-        <View style={styles.itemContainer}>
-          <Text>Activity 15</Text>
-        </View> 
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 2</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 3</Text>
+        </TouchableOpacity>
+
+
+        <Text style={{ fontSize: 25, paddingLeft:10, fontFamily: 'HelveticaNeue-LightItalic' }}>Silver Badge</Text>
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 4</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 5</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 6</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 7</Text>
+        </TouchableOpacity>
+
+        <Text style={{ fontSize: 25, paddingLeft:10,fontFamily: 'HelveticaNeue-LightItalic'  }}>Gold Badge</Text>
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 8</Text>
+        </TouchableOpacity>
+
+       <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 9</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 10</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 11</Text>
+        </TouchableOpacity>
+
+        <Text style={{ fontSize: 25, paddingLeft:10, fontFamily: 'HelveticaNeue-LightItalic' }}>Platinum badge/</Text>
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 12</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 13</Text>
+        </TouchableOpacity>
+         
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 14</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.itemContainer}
+          onPress={() => navigation.navigate('Detail')}>
+          <Text style={styles.buttonText}>Activity 15</Text>
+        </TouchableOpacity>
+
       </ScrollView>
     </View>
+
   );
 }
 
@@ -102,10 +155,19 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignSelf: 'center',
   },
+  buttonContainer: {
+    width: 100,
+    padding: 2,
+    backgroundColor: '#47B6AD',
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 20,
+    alignSelf: 'center',
+    margin: "2%",
+  },
   buttonText: {
-    fontSize:20,
-    color: 'white',
-    fontWeight: 'bold',
+    fontSize:18,
+    color: 'black',
     textAlign: 'center',
   },
   container: {

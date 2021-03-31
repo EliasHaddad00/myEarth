@@ -47,14 +47,12 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: "AppleGothic",
     color: '#DCE21D',
     textAlign: 'center'
   },
   inlineText: {
     fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: "AppleGothic",
     color: '#DCE21D',
     textAlign: 'center',
     marginTop: '2%',
@@ -65,7 +63,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     fontSize: 35,
     fontWeight: 'bold',
-    fontFamily: "PT Sans Caption",
     color: '#DCE21D',
     textAlign: 'center',
     marginTop:'10%'

@@ -4,9 +4,9 @@
     "slug": "myEarth",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/earthAmbassadeurs_logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/earthAmbassadeurs_logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,12 +21,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/earthAmbassadeurs_logo.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/earthModel.png"
+      "favicon": "./assets/earthAmbassadeurs_logo.png"
     },
     "description": ""
   }

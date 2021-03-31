@@ -40,3 +40,6 @@ export async function loggingOut() {
     Alert.alert('loggingOut error', err.message);
   }
 }
+
+// Create a function that creates a doc for the questionare
+// and call it from the detail.js file 
