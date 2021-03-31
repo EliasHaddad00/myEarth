@@ -4,7 +4,6 @@ import {Alert} from "react-native";
 
 const firebase = require("firebase");
 require("firebase/firestore");
-
 export async function registration(email, password, lastName, firstName) {
   try {
     await firebase.auth().createUserWithEmailAndPassword(email, password);
@@ -43,3 +42,22 @@ export async function loggingOut() {
 
 // Create a function that creates a doc for the questionare
 // and call it from the detail.js file 
+
+export async function questionaire(answerOne, answerTwo, answerThree) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("questionaire")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+        answerTwo: answerTwo,
+        answerThree: answerThree,
+      });
+  } catch (err) {
+    Alert.alert("registration error", err.message);
+  }
+}
+
+export {firebase};
