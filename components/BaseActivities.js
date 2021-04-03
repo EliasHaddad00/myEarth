@@ -32,7 +32,7 @@ function BaseActivities() {
           name='Detail'
           component={Detail}
           options={({ route }) => ({
-            title: 'Activity'
+            title: 'Activities'
           })}
         />
         

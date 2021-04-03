@@ -43,7 +43,8 @@ export async function loggingOut() {
 // Create a function that creates a doc for the questionare
 // and call it from the detail.js file 
 
-export async function questionaire(answerOne, answerTwo, answerThree) {
+export async function questionaire(answerOne, answerTwo, answerThree, answerFour, answerFive, 
+  answerSix, answerSeven, answerEight, answerNine, answerTen, answerEleven) {
   try {
     const currentUser = await firebase.auth().currentUser;
 
@@ -54,10 +55,203 @@ export async function questionaire(answerOne, answerTwo, answerThree) {
         answerOne: answerOne,
         answerTwo: answerTwo,
         answerThree: answerThree,
+        answerFour: answerFour,
+        answerFive: answerFive,
+        answerSix: answerSix,
+        answerSeven: answerSeven,
+        answerEight: answerEight,
+        answerNine: answerNine,
+        answerTen: answerTen,
+        answerEleven: answerEleven
       });
   } catch (err) {
     Alert.alert("registration error", err.message);
   }
 }
+export async function level_one_two(answerOne, answerTwo, answerThree) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
 
+    const db = firebase.firestore();
+    db.collection("level_one_two")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+        answerTwo: answerTwo,
+        answerThree: answerThree,
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+export async function level_two_one(answerOne, answerTwo, answerThree, answerFour, answerFive) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_two_one")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+        answerTwo: answerTwo,
+        answerThree: answerThree,
+        answerFour: answerFour,
+        answerFive: answerFive,
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+
+export async function level_two_two(answerOne) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_two_two")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+
+export async function level_two_three(answerOne, answerTwo, answerThree, answerFour, answerFive, answerSix) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_two_three")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+        answerTwo: answerTwo,
+        answerThree: answerThree,
+        answerFour: answerFour,
+        answerFive: answerFive,
+        answerSix: answerSix,
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+
+export async function level_three(answerOne) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_three")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+export async function level_four(answerOne, answerTwo) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_four")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+        answerTwo: answerTwo
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+
+export async function level_S_one(answerOne, answerTwo) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_S_one")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+        answerTwo: answerTwo
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+
+export async function level_S_two(answerOne) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_S_two")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+export async function level_G_one(answerOne, answerTwo, answerThree, answerFour, answerFive) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_G_one")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+        answerTwo: answerTwo,
+        answerThree: answerThree,
+        answerFour: answerFour,
+        answerFive: answerFive
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+/*
+export async function level_G_two(answerOne, answerTwo, answerThree, answerFour, answerFive) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_S_two")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+        answerTwo: answerTwo,
+        answerThree: answerThree,
+        answerFour: answerFour,
+        answerFive: answerFive
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
+*/
+export async function level_P_one(answerOne, answerTwo, answerThree, answerFour, answerFive) {
+  try {
+    const currentUser = await firebase.auth().currentUser;
+
+    const db = firebase.firestore();
+    db.collection("level_P_two")
+      .doc(currentUser.uid)
+      .set({
+        answerOne: answerOne,
+        answerTwo: answerTwo,
+        answerThree: answerThree,
+        answerFour: answerFour,
+        answerFive: answerFive
+      });
+  } catch (err) {
+    Alert.alert("submission error", err.message);
+  }
+}
 export {firebase};
