@@ -68,7 +68,7 @@ export async function questionaire(answerOne, answerTwo, answerThree, answerFour
     Alert.alert("registration error", err.message);
   }
 }
-export async function level_one_two(answerOne, answerTwo, answerThree) {
+export async function level_one_two_db(answerOne, answerTwo, answerThree) {
   try {
     const currentUser = await firebase.auth().currentUser;
 
@@ -84,7 +84,7 @@ export async function level_one_two(answerOne, answerTwo, answerThree) {
     Alert.alert("submission error", err.message);
   }
 }
-export async function level_two_one(answerOne, answerTwo, answerThree, answerFour, answerFive) {
+export async function level_two_one_db(answerOne, answerTwo, answerThree, answerFour, answerFive) {
   try {
     const currentUser = await firebase.auth().currentUser;
 
@@ -103,7 +103,7 @@ export async function level_two_one(answerOne, answerTwo, answerThree, answerFou
   }
 }
 
-export async function level_two_two(answerOne) {
+export async function level_two_two_db(answerOne) {
   try {
     const currentUser = await firebase.auth().currentUser;
 
@@ -118,7 +118,7 @@ export async function level_two_two(answerOne) {
   }
 }
 
-export async function level_two_three(answerOne, answerTwo, answerThree, answerFour, answerFive, answerSix) {
+export async function level_two_three_db(answerOne, answerTwo, answerThree, answerFour, answerFive, answerSix) {
   try {
     const currentUser = await firebase.auth().currentUser;
 
@@ -138,11 +138,15 @@ export async function level_two_three(answerOne, answerTwo, answerThree, answerF
   }
 }
 
-export async function level_three(answerOne) {
+export async function level_three_db(answerOne) {
   try {
     const currentUser = await firebase.auth().currentUser;
-
     const db = firebase.firestore();
+    /*
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    console.log(doc.data().firstName);
+    */
     db.collection("level_three")
       .doc(currentUser.uid)
       .set({
@@ -152,7 +156,7 @@ export async function level_three(answerOne) {
     Alert.alert("submission error", err.message);
   }
 }
-export async function level_four(answerOne, answerTwo) {
+export async function level_four_db(answerOne, answerTwo) {
   try {
     const currentUser = await firebase.auth().currentUser;
 
@@ -168,7 +172,7 @@ export async function level_four(answerOne, answerTwo) {
   }
 }
 
-export async function level_S_one(answerOne, answerTwo) {
+export async function level_S_one_db(answerOne, answerTwo) {
   try {
     const currentUser = await firebase.auth().currentUser;
 
@@ -184,7 +188,7 @@ export async function level_S_one(answerOne, answerTwo) {
   }
 }
 
-export async function level_S_two(answerOne) {
+export async function level_S_two_db(answerOne) {
   try {
     const currentUser = await firebase.auth().currentUser;
 
@@ -198,7 +202,7 @@ export async function level_S_two(answerOne) {
     Alert.alert("submission error", err.message);
   }
 }
-export async function level_G_one(answerOne, answerTwo, answerThree, answerFour, answerFive) {
+export async function level_G_one_db(answerOne, answerTwo, answerThree, answerFour, answerFive) {
   try {
     const currentUser = await firebase.auth().currentUser;
 
@@ -236,7 +240,7 @@ export async function level_G_two(answerOne, answerTwo, answerThree, answerFour,
   }
 }
 */
-export async function level_P_one(answerOne, answerTwo, answerThree, answerFour, answerFive) {
+export async function level_P_one_db(answerOne, answerTwo, answerThree, answerFour, answerFive) {
   try {
     const currentUser = await firebase.auth().currentUser;
 

@@ -6,7 +6,9 @@ import * as React from 'react'
 
 
 // Level 1.1
-const level_one_one = 
+const data={
+
+level_one_one_obj : 
 {
 	title: 'Understanding Plastic',
 	header_one: 'What is plastic?', 
@@ -16,9 +18,9 @@ const level_one_one =
 	header_three: 'The problem with plastics?', 
 	info_three:'',
 	type: '1.1',
-}
+},
 // Level 1.2
-const level_one_two = 
+level_one_two_obj : 
 {
 	title: 'Your Plastic Footprint',
 	header_one: 'How do you dispose?', 
@@ -26,9 +28,9 @@ const level_one_two =
 	header_three: 'How have you used plastic in the past month?', 
 	type: '1.2',
 	
-}
+},
 // Level 2.1
-const level_two_one = 
+level_two_one_obj : 
 {
 	title: 'Rethink, Refuse, Reduce, Reuse, Recycle',
 
@@ -41,9 +43,9 @@ const level_two_one =
 	header_four: 'Fourth alternative', 
 	header_five: 'Fifth alternative', 
 	type: '2.1',
-}
+},
 // Level 2.2
-const level_two_two = 
+level_two_two_obj : 
 {
 	title: 'Movie screening: Watch',
 
@@ -54,9 +56,9 @@ const level_two_two =
 
 	header_one: 'Upload image of the movie screening', 	
 	type: '2.2',
-}
+},
 // Level 2.3
-const level_two_three = 
+level_two_three_obj : 
 {
 	title: 'Identifying Alternatives',
 
@@ -67,9 +69,9 @@ const level_two_three =
 	header_two: 'alternative use image', 
 	//	header_one and header_two will be used multiple times
 	type: '2.3',
-}
+},
 // level 3
-const level_three = 
+level_three_obj : 
 {
 	title: ' Recycling Art (Trash to Treasure)',
 
@@ -79,9 +81,9 @@ const level_three =
 	+' Collect some common SUP items found at home (yogurt cups, bottle caps, bottles, etc). ',
 	header_one: 'SUP description', 
 	type: '3',
-}
+},
 // Level 4
-const level_four = 
+level_four_obj : 
 {
 	title: 'Making a difference at home',
 
@@ -91,9 +93,9 @@ const level_four =
 	header_one: 'Image', 
 	header_two: 'Plastic Free Pledge',
 	type: '4',
-}
+},
 // Level S1
-const level_S_one = 
+level_S_one_obj : 
 {
 	title: 'Observation',
 
@@ -103,9 +105,9 @@ const level_S_one =
 	header_one: 'Description of walk', 
 	header_two: 'Message',
 	type: 'S1',
-}
+},
 // Level S2
-const level_S_two = 
+level_S_two_obj : 
 {
 	title: 'Sharing',
 
@@ -115,9 +117,9 @@ const level_S_two =
 
 	header_one: 'Image', 
 	type: 'S2',
-}
+},
 // Level G1
-const level_G_one = 
+level_G_one_obj : 
 {
 	title: 'Rethinking Plastic',
 	info: 'Describe one thing daily about the need to rethink plastic use and reduce footprint (in person or online) ',
@@ -127,11 +129,11 @@ const level_G_one =
 	header_four: 'Fourth rethink', 
 	header_five: 'Fifth rethink', 
 	type: 'G1',
-}
+},
 // Level G2
-const level_G_two = {}
+level_G_two_obj : {},
 
-const level_P_one = 
+level_P_one_obj : 
 {
 	title: 'Sustaining Change ',
 
@@ -147,18 +149,8 @@ const level_P_one =
 	header_four: 'Describe how you will formulate a Junior Ambassadeur programme at school', 
 	header_five: 'Describe how you will get SUP use drafted into school policy', 
 	type: 'P1',
-}
+},
+};
 
 
-export {level_one_one}
-export {level_one_two}
-export {level_two_one}
-export {level_two_two}
-export {level_two_three}
-export {level_three}
-export {level_four}
-export {level_S_one}
-export {level_S_two}
-export {level_G_one}
-export {level_G_two}
-export {level_P_one}
+export {data}
