@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {StyleSheet, Text, TextInput, View, TouchableOpacity} from 'react-native';
+import { ScrollView } from "react-native-gesture-handler";
 //import { level_four, level_P_one, level_S_two } from "../API/data";
 import {questionaire, level_G_one_db, level_P_one_db, level_S_one_db, level_S_two_db, level_four_db, level_one_two_db, level_three_db, level_two_one_db, level_two_two_db, level_two_three_db} from "../API/firebaseMethods";
 
@@ -499,12 +500,14 @@ export default function Detail({route, navigation}) {
   }
   //-----------------------end of conditional render--------------------------------------
   return (
-    <View style={styles.container}>
-      {render}
-      <TouchableOpacity style={styles.button} onPress={handlePress}>
-        <Text style={styles.buttonText}>Submit</Text>
-      </TouchableOpacity>
-    </View>
+    <ScrollView style={{backgroundColor:'#fff'}}>
+      <View style={styles.container}>
+        {render}
+        <TouchableOpacity style={styles.button} onPress={handlePress}>
+          <Text style={styles.buttonText}>Submit</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({

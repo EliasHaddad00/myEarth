@@ -39,7 +39,7 @@ export default function getActivities({navigation}){
         <TouchableOpacity
           style={styles.itemContainer}
           onPress={() => navigation.navigate('Detail',{data, type:'questionnaire'} )}>
-          <Text style={styles.buttonText}>Questionare</Text>
+          <Text style={styles.buttonText}>Pre-Questionnaire</Text>
         </TouchableOpacity>
 
         <Text style={{ fontSize: 25, paddingLeft:10, fontFamily: 'HelveticaNeue-LightItalic' }}>Background</Text>
@@ -124,7 +124,7 @@ export default function getActivities({navigation}){
         <TouchableOpacity
           style={styles.itemContainer}
           onPress={() => navigation.navigate('Detail',{data, type:'questionnaire'})}>
-          <Text style={styles.buttonText}>Questionare </Text>
+          <Text style={styles.buttonText}>Post-Questionnaire </Text>
         </TouchableOpacity>
 
         

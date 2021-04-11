@@ -10,6 +10,8 @@ import getActivities from '../components/activities';
 import getMap from '../components/mapping'
 import BaseActivities from '../components/BaseActivities';
 import getLeaderBoards from '../components/leaderBoards'
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {getAll} from '../components/userData'
 
 export default function Dashboard({ navigation }) {
   let currentUserUID = firebase.auth().currentUser.uid;
@@ -37,31 +39,46 @@ export default function Dashboard({ navigation }) {
     getUserInfo();
   })
 
-  const handlePress = () => {
-    loggingOut();
-    navigation.replace('Home');
-  };
 
 
 
-  function leaderBoards() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>this is where the leaderboards will be!</Text>
-        <TouchableOpacity style={styles.button} onPress={handlePress}>
-          <Text style={styles.buttonText}>Log Out</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
+
   const Tab = createBottomTabNavigator();
   console.log("in dashboard")
   //<Tab.Screen name="Home" component={(getMap)} />
-  return (
-    <Tab.Navigator>
+/*
+  <Tab.Navigator>
       <Tab.Screen name="Activities" component={BaseActivities} />
       <Tab.Screen name="Other" component={getLeaderBoards} />
     </Tab.Navigator>
+    */
+  return (
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'Activities') {
+              iconName = focused
+                ? 'globe'
+                : 'globe-outline';
+            } else if (route.name === 'Leader Boards') {
+              getAll();
+              iconName = focused ? 'list' : 'list';
+            }
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: '#47B6AD',
+          inactiveTintColor: 'gray',
+        }}
+      >
+        <Tab.Screen name="Activities" component={BaseActivities} />
+        <Tab.Screen name="Leader Boards" component={getLeaderBoards} />
+      </Tab.Navigator>
   )
 }
 
