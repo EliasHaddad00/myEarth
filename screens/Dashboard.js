@@ -9,6 +9,7 @@ import {loggingOut} from '../API/firebaseMethods';
 import getActivities from '../components/activities';
 import getMap from '../components/mapping'
 import BaseActivities from '../components/BaseActivities';
+import getLeaderBoards from '../components/leaderBoards'
 
 export default function Dashboard({ navigation }) {
   let currentUserUID = firebase.auth().currentUser.uid;
@@ -53,14 +54,13 @@ export default function Dashboard({ navigation }) {
       </View>
     );
   }
-
   const Tab = createBottomTabNavigator();
-
+  console.log("in dashboard")
+  //<Tab.Screen name="Home" component={(getMap)} />
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={getMap} />
       <Tab.Screen name="Activities" component={BaseActivities} />
-      <Tab.Screen name="Other" component={leaderBoards} />
+      <Tab.Screen name="Other" component={getLeaderBoards} />
     </Tab.Navigator>
   )
 }

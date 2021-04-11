@@ -6,7 +6,7 @@ import {loggingOut} from '../API/firebaseMethods';
 import {getAll, userData} from './userData'
 import {Dashboard} from '../screens/Dashboard'
 
-export default function getMap({navigation}) {
+export default function getLeaderBoards({navigation}) {
   let currentUserUID = firebase.auth().currentUser.uid;
   const [firstName, setFirstName] = useState('');
 
@@ -15,7 +15,7 @@ export default function getMap({navigation}) {
     navigation.replace('Home');
   };
 
-  //getAll();
+  getAll();
   //console.log(userData);
 
   const listItems = userData.map((d) => <Text style={styles.itemContainer} key={d.firstName}>{d.firstName}</Text>);

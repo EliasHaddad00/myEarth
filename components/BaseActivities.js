@@ -1,3 +1,4 @@
+
 import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -32,7 +33,7 @@ function BaseActivities() {
           name='Detail'
           component={Detail}
           options={({ route }) => ({
-            title: 'Activity'
+            title: 'Activities'
           })}
         />
         
