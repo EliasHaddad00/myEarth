@@ -398,7 +398,7 @@ export default function Detail({route, navigation}) {
                                 level of knowledge you hold about our enviroment, plastic and
                                 generally the causes and effects of plastics to our enviroment
       </Text>,
-      <Text style={styles.label}>QuestionOne</Text>,
+      <Text style={styles.label}>I know what single-use plastic is:</Text>,
       <TextInput
           style={styles.input}
           placeholder="answer one*"
@@ -406,7 +406,7 @@ export default function Detail({route, navigation}) {
           onChangeText={(answer) => setAnswerOne(answer)}
           />,
 
-      <Text style={styles.label}>QuestionTwo</Text>,
+      <Text style={styles.label}>Do you think you have a responsibility to help reduce single-use plastic waste?</Text>,
       <TextInput
           style={styles.input}
           placeholder="answer two*"
@@ -414,7 +414,7 @@ export default function Detail({route, navigation}) {
           onChangeText={(answer) => setAnswerTwo(answer)}
           />,
 
-      <Text style={styles.label}>QuestionThree</Text>,
+      <Text style={styles.label}>What types of single-use plastics do you use?</Text>,
       <TextInput
           multiline={true} 
           numberOfLines={10}
@@ -424,7 +424,7 @@ export default function Detail({route, navigation}) {
           onChangeText={(answer) => setAnswerThree(answer)}
           />,
 
-      <Text style={styles.label}>Q4</Text>,
+      <Text style={styles.label}>How do you normally deal with plastic waste at home?</Text>,
         <TextInput
             multiline={true} 
             numberOfLines={10}
@@ -433,7 +433,7 @@ export default function Detail({route, navigation}) {
             value={answerFour}
             onChangeText={(answer) => setAnswerFour(answer)}
       />,
-      <Text style={styles.label}>Q5</Text>,
+      <Text style={styles.label}>My friends will think I am weird if I do not use single-use plastic?</Text>,
         <TextInput
             multiline={true} 
             numberOfLines={10}
@@ -442,7 +442,7 @@ export default function Detail({route, navigation}) {
             value={answerFive}
             onChangeText={(answer) => setAnswerFive(answer)}
       />,
-      <Text style={styles.label}>Q6</Text>,
+      <Text style={styles.label}>Many people think disposable plastic items (single-use plastic) are good. What do you think?</Text>,
         <TextInput
             multiline={true} 
             numberOfLines={10}
@@ -451,7 +451,7 @@ export default function Detail({route, navigation}) {
             value={answerSix}
             onChangeText={(answer) => setAnswerSix(answer)}
       />,
-      <Text style={styles.label}>,Q7</Text>,
+      <Text style={styles.label}>Your friend eats his lunch in a container he takes from home. Do you think this is right?</Text>,
         <TextInput
             multiline={true} 
             numberOfLines={10}
@@ -460,7 +460,7 @@ export default function Detail({route, navigation}) {
             value={answerSeven}
             onChangeText={(answer) => setAnswerSeven(answer)}
       />,  
-      <Text style={styles.label}>Q8</Text>,
+      <Text style={styles.label}>I prefer to drink my juice with a straw:</Text>,
         <TextInput
             multiline={true} 
             numberOfLines={10}
@@ -469,7 +469,7 @@ export default function Detail({route, navigation}) {
             value={answerEight}
             onChangeText={(answer) => setAnswerEight(answer)}
       />,
-      <Text style={styles.label}>Q9</Text>,
+      <Text style={styles.label}>I can change the way my family and friends use plastics in their everyday lives by talking to them about the negative impacts plastic is having.</Text>,
         <TextInput
             multiline={true} 
             numberOfLines={10}
@@ -478,7 +478,7 @@ export default function Detail({route, navigation}) {
             value={answerNine}
             onChangeText={(answer) => setAnswerNine(answer)}
       />,  
-      <Text style={styles.label}>Q10</Text>,
+      <Text style={styles.label}>Can you easily find alternatives to plastic?</Text>,
         <TextInput
             multiline={true} 
             numberOfLines={10}
@@ -487,7 +487,7 @@ export default function Detail({route, navigation}) {
             value={answerTen}
             onChangeText={(answer) => setAnswerTen(answer)}
       />,
-      <Text style={styles.label}>Q11</Text>,
+      <Text style={styles.label}>Do you know of any plastic recyclers in your area?</Text>,
         <TextInput
             multiline={true} 
             numberOfLines={10}

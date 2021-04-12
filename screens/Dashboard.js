@@ -7,7 +7,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import * as firebase from 'firebase';
 import {loggingOut} from '../API/firebaseMethods';
 import getActivities from '../components/activities';
-import getMap from '../components/mapping'
 import BaseActivities from '../components/BaseActivities';
 import getLeaderBoards from '../components/leaderBoards'
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -44,7 +43,7 @@ export default function Dashboard({ navigation }) {
 
 
   const Tab = createBottomTabNavigator();
-  console.log("in dashboard")
+  //console.log("in dashboard")
   //<Tab.Screen name="Home" component={(getMap)} />
 /*
   <Tab.Navigator>
