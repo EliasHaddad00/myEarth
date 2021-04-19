@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Alert, FlatList, List} from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import * as firebase from 'firebase';
 import {loggingOut} from '../API/firebaseMethods';
-import {getAll, userData} from './userData'
+import {getAll, userData, user_institute} from './userData'
 import {Dashboard} from '../screens/Dashboard'
 
 export default function getLeaderBoards({navigation}) {
@@ -17,12 +17,13 @@ export default function getLeaderBoards({navigation}) {
 
   getAll();
   //console.log(userData);
+  
 
   const listItems = userData.map((d) => <Text style={styles.itemContainer} key={d.firstName}>{d.firstName}</Text>);
   return (
     <View style={styles.container}>
         <ScrollView style={{marginTop:85, width:"100%"}}>
-          <Text style={styles.titleText}>Leader Boards</Text>
+          <Text style={styles.titleText}>{user_institute} Leader Boards</Text>
           {listItems}
         </ScrollView>
         <TouchableOpacity style={styles.button} onPress={handlePress}>

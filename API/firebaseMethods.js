@@ -4,7 +4,7 @@ import {Alert} from "react-native";
 
 const firebase = require("firebase");
 require("firebase/firestore");
-export async function registration(email, password, lastName, firstName) {
+export async function registration(email, password, lastName, firstName, institute) {
   try {
     await firebase.auth().createUserWithEmailAndPassword(email, password);
     const currentUser = firebase.auth().currentUser;
@@ -16,6 +16,7 @@ export async function registration(email, password, lastName, firstName) {
         email: currentUser.email,
         lastName: lastName,
         firstName: firstName,
+        institute: institute,
       });
   } catch (err) {
     Alert.alert("registration error", err.message);
@@ -49,6 +50,10 @@ export async function pre_questionaire(answerOne, answerTwo, answerThree, answer
     const currentUser = await firebase.auth().currentUser;
 
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("pre_questionaire")
       .doc(currentUser.uid)
       .set({
@@ -62,7 +67,9 @@ export async function pre_questionaire(answerOne, answerTwo, answerThree, answer
         answerEight: answerEight,
         answerNine: answerNine,
         answerTen: answerTen,
-        answerEleven: answerEleven
+        answerEleven: answerEleven,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("registration error", err.message);
@@ -76,7 +83,6 @@ export async function level_one_two_db(answerOne, answerTwo, answerThree) {
     const db = firebase.firestore();
     const user = db.collection('users').doc(currentUser.uid);
     const doc = await user.get();
-    //console.log(doc.data().firstName);
     let f_name=doc.data().firstName;
     let l_name=await doc.data().lastName;
     db.collection("level_one_two")
@@ -99,7 +105,8 @@ export async function level_two_one_db(answerOne, answerTwo, answerThree, answer
 
     const user = db.collection('users').doc(currentUser.uid);
     const doc = await user.get();
-    console.log(doc.data().firstName);
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_two_one")
       .doc(currentUser.uid)
       .set({
@@ -108,6 +115,8 @@ export async function level_two_one_db(answerOne, answerTwo, answerThree, answer
         answerThree: answerThree,
         answerFour: answerFour,
         answerFive: answerFive,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -119,10 +128,16 @@ export async function level_two_two_db(answerOne) {
     const currentUser = await firebase.auth().currentUser;
 
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_two_two")
       .doc(currentUser.uid)
       .set({
         answerOne: answerOne,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -134,6 +149,10 @@ export async function level_two_three_db(answerOne, answerTwo, answerThree, answ
     const currentUser = await firebase.auth().currentUser;
 
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_two_three")
       .doc(currentUser.uid)
       .set({
@@ -143,6 +162,8 @@ export async function level_two_three_db(answerOne, answerTwo, answerThree, answ
         answerFour: answerFour,
         answerFive: answerFive,
         answerSix: answerSix,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -153,15 +174,16 @@ export async function level_three_db(answerOne) {
   try {
     const currentUser = await firebase.auth().currentUser;
     const db = firebase.firestore();
-    /*
     const user = db.collection('users').doc(currentUser.uid);
     const doc = await user.get();
-    console.log(doc.data().firstName);
-    */
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_three")
       .doc(currentUser.uid)
       .set({
-        answerOne: answerOne
+        answerOne: answerOne,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -172,11 +194,17 @@ export async function level_four_db(answerOne, answerTwo) {
     const currentUser = await firebase.auth().currentUser;
 
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_four")
       .doc(currentUser.uid)
       .set({
         answerOne: answerOne,
-        answerTwo: answerTwo
+        answerTwo: answerTwo,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -188,11 +216,17 @@ export async function level_S_one_db(answerOne, answerTwo) {
     const currentUser = await firebase.auth().currentUser;
 
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_S_one")
       .doc(currentUser.uid)
       .set({
         answerOne: answerOne,
-        answerTwo: answerTwo
+        answerTwo: answerTwo,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -204,10 +238,16 @@ export async function level_S_two_db(answerOne) {
     const currentUser = await firebase.auth().currentUser;
 
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_S_two")
       .doc(currentUser.uid)
       .set({
         answerOne: answerOne,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -218,6 +258,10 @@ export async function level_G_one_db(answerOne, answerTwo, answerThree, answerFo
     const currentUser = await firebase.auth().currentUser;
 
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_G_one")
       .doc(currentUser.uid)
       .set({
@@ -225,7 +269,9 @@ export async function level_G_one_db(answerOne, answerTwo, answerThree, answerFo
         answerTwo: answerTwo,
         answerThree: answerThree,
         answerFour: answerFour,
-        answerFive: answerFive
+        answerFive: answerFive,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -236,6 +282,10 @@ export async function level_G_two_db(answerOne, answerTwo, answerThree, answerFo
   try {
     const currentUser = await firebase.auth().currentUser;
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_G_two")
       .doc(currentUser.uid)
       .set({
@@ -243,7 +293,9 @@ export async function level_G_two_db(answerOne, answerTwo, answerThree, answerFo
         answerTwo: answerTwo,
         answerThree: answerThree,
         answerFour: answerFour,
-        answerFive: answerFive
+        answerFive: answerFive,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -255,6 +307,10 @@ export async function level_P_one_db(answerOne, answerTwo, answerThree, answerFo
     const currentUser = await firebase.auth().currentUser;
 
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("level_P_two")
       .doc(currentUser.uid)
       .set({
@@ -262,7 +318,9 @@ export async function level_P_one_db(answerOne, answerTwo, answerThree, answerFo
         answerTwo: answerTwo,
         answerThree: answerThree,
         answerFour: answerFour,
-        answerFive: answerFive
+        answerFive: answerFive,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("submission error", err.message);
@@ -274,6 +332,10 @@ export async function post_questionaire(answerOne, answerTwo, answerThree, answe
     const currentUser = await firebase.auth().currentUser;
 
     const db = firebase.firestore();
+    const user = db.collection('users').doc(currentUser.uid);
+    const doc = await user.get();
+    let f_name=doc.data().firstName;
+    let l_name=await doc.data().lastName;
     db.collection("post_questionaire")
       .doc(currentUser.uid)
       .set({
@@ -287,7 +349,9 @@ export async function post_questionaire(answerOne, answerTwo, answerThree, answe
         answerEight: answerEight,
         answerNine: answerNine,
         answerTen: answerTen,
-        answerEleven: answerEleven
+        answerEleven: answerEleven,
+        firstName:f_name,
+        lastName:l_name,
       });
   } catch (err) {
     Alert.alert("registration error", err.message);

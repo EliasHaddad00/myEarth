@@ -38,10 +38,6 @@ export default function Dashboard({ navigation }) {
     getUserInfo();
   })
 
-
-
-
-
   const Tab = createBottomTabNavigator();
   //console.log("in dashboard")
   //<Tab.Screen name="Home" component={(getMap)} />

@@ -7,6 +7,7 @@ export default function SignUp({ navigation }) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [institute, setInstitute] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -15,6 +16,7 @@ export default function SignUp({ navigation }) {
     setLastName('');
     setEmail('');
     setPassword('');
+    setInstitute('');
     setConfirmPassword('');
   };
 
@@ -23,7 +25,10 @@ export default function SignUp({ navigation }) {
       Alert.alert('First name is required');
     } else if (!email) {
       Alert.alert('Email field is required.');
-    } else if (!password) {
+    } else if (!institute) {
+      Alert.alert('institute field is required.');
+    }
+    else if (!password) {
       Alert.alert('Password field is required.');
     } else if (!confirmPassword) {
       setPassword('');
@@ -36,6 +41,7 @@ export default function SignUp({ navigation }) {
         password,
         lastName,
         firstName,
+        institute
       );
       navigation.navigate('Loading');
       emptyState();
@@ -61,7 +67,12 @@ export default function SignUp({ navigation }) {
           value={lastName}
           onChangeText={(name) => setLastName(name)}
          />
-
+        <TextInput
+          style={styles.textInput}
+          placeholder="Enter your Institute"
+          value={institute}
+          onChangeText={(institute) => setInstitute(institute)}
+         />
          <TextInput
           style={styles.textInput}
           placeholder="Enter your email*"
