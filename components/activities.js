@@ -38,7 +38,7 @@ export default function getActivities({navigation}){
       <ScrollView style={{ flex: 1, width:'100%' }}>
         <TouchableOpacity
           style={styles.itemContainer}
-          onPress={() => navigation.navigate('Detail',{data, type:'questionnaire'} )}>
+          onPress={() => navigation.navigate('Detail',{data, type:'pre-questionnaire'} )}>
           <Text style={styles.buttonText}>Pre-Questionnaire</Text>
         </TouchableOpacity>
 
@@ -123,7 +123,7 @@ export default function getActivities({navigation}){
 
         <TouchableOpacity
           style={styles.itemContainer}
-          onPress={() => navigation.navigate('Detail',{data, type:'questionnaire'})}>
+          onPress={() => navigation.navigate('Detail',{data, type:'post-questionnaire'})}>
           <Text style={styles.buttonText}>Post-Questionnaire </Text>
         </TouchableOpacity>
 

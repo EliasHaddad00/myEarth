@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {StyleSheet, Text, TextInput, View, TouchableOpacity} from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 //import { level_four, level_P_one, level_S_two } from "../API/data";
-import {questionaire, level_G_one_db, level_P_one_db, level_S_one_db, level_S_two_db, level_four_db, level_one_two_db, level_three_db, level_two_one_db, level_two_two_db, level_two_three_db} from "../API/firebaseMethods";
+import {pre_questionaire,post_questionaire, level_G_one_db, level_P_one_db, level_S_one_db, level_S_two_db, level_four_db, level_one_two_db, level_three_db, level_two_one_db, level_two_two_db, level_two_three_db,level_G_two_db} from "../API/firebaseMethods";
 
 //var db = firebaseApp.firestore();
 
@@ -32,7 +32,7 @@ export default function Detail({route, navigation}) {
     setAnswerTen('');
     setAnswerEleven('');
   };
-  const {level_one_one_obj,level_one_two_obj,level_two_one_obj,level_two_two_obj,level_two_three_obj,level_three_obj,level_four_obj,level_S_one_obj,level_S_two_obj,level_G_one_obj,level_G_Two_obj,level_P_one_obj}=route.params.data;
+  const {level_one_one_obj,level_one_two_obj,level_two_one_obj,level_two_two_obj,level_two_three_obj,level_three_obj,level_four_obj,level_S_one_obj,level_S_two_obj,level_G_one_obj,level_G_Two_obj,level_P_one_obj,level_G_two_obj}=route.params.data;
   const {type}=route.params;
 
   const handlePress = () => {    
@@ -65,11 +65,18 @@ export default function Detail({route, navigation}) {
     else if(type=='G1'){
       level_G_one_db(answerOne, answerTwo, answerThree, answerFour, answerFive);
     }
+    else if(type=='G2'){
+      level_G_two_db(answerOne, answerTwo, answerThree, answerFour, answerFive, answerSix);
+    }
     else if(type=='P1'){
       level_P_one_db(answerOne, answerTwo, answerThree, answerFour, answerFive);
     }
-    else{
-      questionaire(answerOne, answerTwo, answerThree, answerFour, answerFive, 
+    else if(type=='pre-questionnaire'){
+      pre_questionaire(answerOne, answerTwo, answerThree, answerFour, answerFive, 
+        answerSix, answerSeven, answerEight, answerNine, answerTen, answerEleven);
+    }
+    else if(type=='post-questionnaire'){
+      post_questionaire(answerOne, answerTwo, answerThree, answerFour, answerFive, 
         answerSix, answerSeven, answerEight, answerNine, answerTen, answerEleven);
     }
     emptyState();
@@ -389,7 +396,50 @@ export default function Detail({route, navigation}) {
     ];
   }else if(type=='G2'){
     render=[
-    <Text style={styles.title}>,Needs updating</Text>,
+      <Text style={styles.title}>{level_G_two_obj.title}</Text>,
+      <Text style={styles.info}>{level_G_two_obj.info}</Text>,
+      <Text style={styles.label}>{level_G_two_obj.header_one}</Text>,
+      <TextInput
+          style={styles.input}
+          placeholder="answer one*"
+          value={answerOne}
+          onChangeText={(answer) => setAnswerOne(answer)}
+          />,
+      <Text style={styles.label}>{level_G_two_obj.header_two}</Text>,
+        <TextInput
+            style={styles.input}
+            placeholder="answer two*"
+            value={answerTwo}
+            onChangeText={(answer) => setAnswerTwo(answer)}
+        />,
+        <Text style={styles.label}>{level_G_two_obj.header_one}</Text>,
+        <TextInput
+          style={styles.input}
+          placeholder="answer one*"
+          value={answerThree}
+          onChangeText={(answer) => setAnswerThree(answer)}
+          />,
+      <Text style={styles.label}>{level_G_two_obj.header_two}</Text>,
+        <TextInput
+            style={styles.input}
+            placeholder="answer two*"
+            value={answerFour}
+            onChangeText={(answer) => setAnswerFour(answer)}
+        />,
+        <Text style={styles.label}>{level_G_two_obj.header_one}</Text>,
+        <TextInput
+          style={styles.input}
+          placeholder="answer one*"
+          value={answerFive}
+          onChangeText={(answer) => setAnswerFive(answer)}
+          />,
+      <Text style={styles.label}>{level_G_two_obj.header_two}</Text>,
+        <TextInput
+            style={styles.input}
+            placeholder="answer two*"
+            value={answerSix}
+            onChangeText={(answer) => setAnswerSix(answer)}
+        />,
     ];
   }else{
     render=[

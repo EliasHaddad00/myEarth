@@ -12,11 +12,17 @@ level_one_one_obj :
 {
 	title: 'Understanding Plastic',
 	header_one: 'What is plastic?', 
-	info_one:'', 
+	info_one:'This badge is all aboutplastics, but what are they? Invented in 1907, a plastic is a type of human-made material'
+	+'that can be formed into almost any shape. Plastic is really useful and when we first created it, we knew we were onto something'
+	+'big. It is cheap, flexible, and hard to break. It lends itself easily to the manufacture of zillions of products.',
 	header_two: 'What is SUB?', 
-	info_two:'',
+	info_two:'SUP stands for single use platics and this is a problem because nearly one-third of the'
+	+'plastic packaging we use ends up clogging our city streets and polluting our natural environment.',
 	header_three: 'The problem with plastics?', 
-	info_three:'',
+	info_three:'Imagine if you could do something about ocean pollution, climate change, human health and floods all at once! Sounds like a job'
+	+'for a superhero? Actually, it could be you! And all you’d have to do is reduce your use of plastic and get others to do the'
+	+'same. Hello, Captain No-Plastic! If that sounds weird, guess what? It gets weirder. Plastic is not only connected to ocean pollution,' 
+	+'climate change, human health and flooding, but much, much more. Try tourism, toxic waste and turtle safety. But let’s not get ahead of ourselves.',
 	type: '1.1',
 },
 // Level 1.2
@@ -131,7 +137,13 @@ level_G_one_obj :
 	type: 'G1',
 },
 // Level G2
-level_G_two_obj : {},
+level_G_two_obj : {
+	title: 'Building Change Agents',
+	info: 'Get 1 member from three families to take the plastic free pledge, "making a difference at home" challenge and the "sharing" challenge',
+	header_one: 'member full name', 
+	header_two: 'member email address', 
+	type: 'G2',
+},
 
 level_P_one_obj : 
 {
